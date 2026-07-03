@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jayesh Vinod Patil</title>
+    <meta name="description" content="Jayesh Vinod Patil — recreational programmer.">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <button id="theme-toggle" title="Toggle dark/light mode" aria-label="Toggle theme">☼</button>
+
+    <div class="container">
+
+      <header>
+        <h1>Jayesh Vinod Patil</h1>
+        <p class="tagline">recreational programmer!</p>
+        <nav>
+          <a href="mailto:jayeshcode2008@gmail.com" title="Email">email</a>
+          <span class="sep">·</span>
+          <a href="https://github.com/JVP008/" target="_blank" rel="noopener" title="GitHub">github</a>
+          <span class="sep">·</span>
+          <a href="https://linkedin.com/in/jayesh-vinod-patil" target="_blank" rel="noopener" title="LinkedIn">linkedin</a>
+        </nav>
+      </header>
+
+      <hr>
+
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          Hey, I'm Jayesh — a diploma student from Sakoli, Maharashtra who
+          genuinely enjoys writing code. Not because someone told me to, but
+          because there's something fun about making a computer do what you want.
+        </p>
+        <p>
+          Most of my time goes into building small apps, messing around with
+          new tools, and figuring things out by breaking them first. I don't
+          have a grand plan — I just follow whatever sounds interesting.
+        </p>
+        <p>
+          If you want to talk, find me on <a href="https://github.com/JVP008/">GitHub</a>
+          or just <a href="mailto:jayeshcode2008@gmail.com">email me</a>.
+        </p>
+      </section>
+
+      <hr>
+
+      <section id="education">
+        <h2>Education</h2>
+        <p>
+          <strong>Government Polytechnic, Sakoli</strong><br>
+          Diploma in Computer Technology, 2023 – 2026
+        </p>
+        <p>
+          <strong>Bhusawal High School</strong><br>
+          Completed 2023
+        </p>
+      </section>
+
+      <hr>
+
+      <section id="skills">
+        <h2>Technical Skills</h2>
+        <ul>
+          <li><strong>Languages:</strong> C, Java, Python</li>
+          <li><strong>Tools:</strong> Git, Linux, Vercel, Firebase, AI-powered IDEs &amp; Code Editors, AI CLI/TUI tools, Agentic Browsers</li>
+          <li><strong>Coding Platforms:</strong> LeetCode, Codewars</li>
+          <li><strong>Core Subjects:</strong> Operating Systems, Computer Networks, DBMS, Advanced Java, Programming Fundamentals</li>
+          <li><strong>Development:</strong> Mobile &amp; Web Application Development using AI tools</li>
+        </ul>
+      </section>
+
+      <hr>
+
+      <section id="achievements">
+        <h2>Achievements</h2>
+        <ul>
+          <li>1st Prize, State Level Paper Presentation Competition</li>
+          <li>2nd Prize, Maharashtra State Level Technical Quiz Competition</li>
+          <li>Built a website for a client and earned ₹2500 by delivering the project within 7.5 days</li>
+        </ul>
+      </section>
+
+      <hr>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+          <li><strong>Smart Attendance System</strong> — Mobile app to automate student attendance tracking.</li>
+          <li><strong>Habit Tracker App</strong> — Mobile app for tracking daily habits and productivity.</li>
+          <li><strong>Daily Wisdom Quotes App</strong> — App delivering daily motivational quotes.</li>
+        </ul>
+        <p>More projects on <a href="https://github.com/JVP008/">GitHub</a>.</p>
+      </section>
+
+      <hr>
+
+      <section id="blog">
+        <h2>Blog</h2>
+        <ul class="blog-list">
+          <li>
+            <a href="blog/hello-world.html">hello world</a>
+            <span class="blog-date">— july 2026</span>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+
+    <script>
+      (function () {
+        const btn = document.getElementById('theme-toggle');
+        const stored = localStorage.getItem('theme');
+        if (stored === 'dark') {
+          document.body.classList.add('dark');
+          btn.textContent = '☾';
+        }
+        btn.addEventListener('click', function () {
+          document.body.classList.toggle('dark');
+          const isDark = document.body.classList.contains('dark');
+          btn.textContent = isDark ? '☾' : '☼';
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+      })();
+    </script>
+
+  </body>
+</html>
