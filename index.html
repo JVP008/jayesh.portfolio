@@ -17,9 +17,17 @@
     <div class="container">
       <div class="resizer-handle" title="Drag to resize page width" aria-label="Resize page width" role="separator"></div>
 
+      <div class="handwritten-annotation">
+        <svg class="annotation-arrow" viewBox="0 0 16 50" width="12" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10 1 L8 40" />
+          <path d="M3 34 L8 42 L13 34" />
+        </svg>
+        <span class="annotation-text">read my blog below!</span>
+      </div>
+
       <header>
         <h1>Jayesh Vinod Patil</h1>
-        <p class="tagline"><span class="highlight">recreational programmer!</span></p>
+        <p class="tagline">recreational programmer!</p>
         <nav>
           <a href="javascript:void(0)" class="email-trigger" role="button" aria-expanded="false" aria-controls="header-email-reveal" title="Email">email</a>
           <span class="sep">·</span>
@@ -27,10 +35,8 @@
           <span class="sep">·</span>
           <a href="https://linkedin.com/in/jayesh-vinod-patil" target="_blank" rel="noopener" title="LinkedIn">linkedin</a>
         </nav>
-        <div class="email-reveal-container" id="header-email-reveal" style="display: none;">
+        <div class="email-reveal-container" id="header-email-reveal">
           <span class="email-address">jayeshcode2008@gmail.com</span>
-          <button class="email-copy-btn">Copy</button>
-          <span class="email-copy-success" style="display: none;">Copied!</span>
         </div>
       </header>
 
@@ -39,12 +45,12 @@
       <section id="about">
         <h2>About</h2>
         <p>
-          Hey, I'm Jayesh — a <span class="highlight">diploma student</span> from Sakoli, Maharashtra who
-          <span class="highlight">genuinely enjoys writing code</span>. Not because someone told me to, but
+          Hey, I'm Jayesh — a diploma student from Sakoli, Maharashtra who
+          genuinely enjoys writing code. Not because someone told me to, but
           because there's something fun about making a computer do what you want.
         </p>
         <p>
-          Most of my time goes into <span class="highlight">building small apps</span>, messing around with
+          Most of my time goes into building small apps, messing around with
           new tools, and figuring things out by breaking them first. I don't
           have a grand plan — I just follow whatever sounds interesting.
         </p>
@@ -52,10 +58,8 @@
           If you want to talk, find me on <a href="https://github.com/JVP008/">GitHub</a>
           or just <a href="javascript:void(0)" class="email-trigger" role="button" aria-expanded="false" aria-controls="about-email-reveal">email me</a>.
         </p>
-        <div class="email-reveal-container" id="about-email-reveal" style="display: none;">
+        <div class="email-reveal-container" id="about-email-reveal">
           <span class="email-address">jayeshcode2008@gmail.com</span>
-          <button class="email-copy-btn">Copy</button>
-          <span class="email-copy-success" style="display: none;">Copied!</span>
         </div>
       </section>
 
@@ -91,9 +95,9 @@
       <section id="achievements">
         <h2>Achievements</h2>
         <ul>
-          <li><span class="highlight">1st Prize</span>, State Level Paper Presentation Competition</li>
-          <li><span class="highlight">2nd Prize</span>, Maharashtra State Level Technical Quiz Competition</li>
-          <li>Built a website for a client and <span class="highlight">earned ₹2500</span> by delivering the project within 7.5 days</li>
+          <li>1st Prize, State Level Paper Presentation Competition</li>
+          <li>2nd Prize, Maharashtra State Level Technical Quiz Competition</li>
+          <li>Built a website for a client and earned ₹2500 by delivering the project within 7.5 days</li>
         </ul>
       </section>
 
@@ -102,29 +106,20 @@
       <section id="projects">
         <h2>Projects</h2>
         <ul>
-          <li><strong><span class="highlight">Smart Attendance System</span></strong> — Mobile app to automate student attendance tracking.</li>
-          <li><strong><span class="highlight">Habit Tracker App</span></strong> — Mobile app for tracking daily habits and productivity.</li>
-          <li><strong><span class="highlight">Daily Wisdom Quotes App</span></strong> — App delivering daily motivational quotes.</li>
+          <li><strong>Smart Attendance System</strong> — Mobile app to automate student attendance tracking.</li>
+          <li><strong>Habit Tracker App</strong> — Mobile app for tracking daily habits and productivity.</li>
+          <li><strong>Daily Wisdom Quotes App</strong> — App delivering daily motivational quotes.</li>
         </ul>
         <p>More projects on <a href="https://github.com/JVP008/">GitHub</a>.</p>
       </section>
 
       <hr>
 
-      <div class="handwritten-annotation">
-        <span class="annotation-text">read my blog below!</span>
-        <svg class="annotation-arrow" viewBox="0 0 50 50" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <!-- A beautiful curvy hand-drawn arrow path pointing down-right -->
-          <path d="M10 10 Q25 5 35 25 T40 40" />
-          <path d="M30 40 H40 V30" />
-        </svg>
-      </div>
-
       <section id="blog">
         <h2>Blog</h2>
         <ul class="blog-list">
           <li>
-            <a href="blog/hello-world.html">hello world</a>
+            <a href="blog/hello-world.html">hello_world</a>
             <span class="blog-date">— july 2026</span>
           </li>
         </ul>
@@ -154,9 +149,11 @@
           // Ignore localStorage errors in private browsing/iframe sandboxing
         }
         if (stored === 'dark') {
+          document.documentElement.classList.add('dark');
           document.body.classList.add('dark');
         }
         btn.addEventListener('click', function () {
+          document.documentElement.classList.toggle('dark');
           document.body.classList.toggle('dark');
           const isDark = document.body.classList.contains('dark');
           try {
@@ -166,113 +163,19 @@
           }
         });
 
-        // Email reveal and copy logic
+        // Email reveal logic
         const triggers = document.querySelectorAll('.email-trigger');
 
         triggers.forEach((trigger) => {
           const container = document.getElementById(trigger.getAttribute('aria-controls'));
           if (!container) return;
 
-          const emailText = container.querySelector('.email-address').textContent.trim();
-          const copyBtn = container.querySelector('.email-copy-btn');
-          const successMsg = container.querySelector('.email-copy-success');
-          let copyTimeout;
-
           trigger.addEventListener('click', function (e) {
             e.preventDefault();
-
-            if (container.classList.contains('show')) {
-              container.classList.remove('show');
-              trigger.setAttribute('aria-expanded', 'false');
-            } else {
-              trigger.setAttribute('aria-expanded', 'true');
-              container.style.display = 'flex';
-              container.offsetHeight; // force reflow
-              container.classList.add('show');
-            }
+            const isOpen = container.classList.toggle('show');
+            trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
           });
-
-          // Use transitionend to hide container dynamically
-          container.addEventListener('transitionend', function (e) {
-            if (e.target === container && e.propertyName === 'opacity' && !container.classList.contains('show')) {
-              container.style.display = 'none';
-            }
-          });
-
-          // Use transitionend to hide copy success message dynamically
-          if (successMsg) {
-            successMsg.addEventListener('transitionend', function (e) {
-              if (e.target === successMsg && e.propertyName === 'opacity' && !successMsg.classList.contains('show')) {
-                successMsg.style.display = 'none';
-              }
-            });
-          }
-
-          if (copyBtn) {
-            copyBtn.addEventListener('click', function () {
-              const handleCopySuccess = () => {
-                if (successMsg) {
-                  successMsg.style.display = 'inline';
-                  successMsg.offsetHeight; // force reflow
-                  successMsg.classList.add('show');
-                }
-                if (copyTimeout) clearTimeout(copyTimeout);
-                copyTimeout = setTimeout(() => {
-                  if (successMsg) {
-                    successMsg.classList.remove('show');
-                  }
-                }, 2000);
-              };
-
-              if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(emailText).then(handleCopySuccess).catch(err => {
-                  console.error('Failed to copy: ', err);
-                });
-              } else {
-                // Fallback
-                const tempTextArea = document.createElement('textarea');
-                tempTextArea.value = emailText;
-                tempTextArea.style.position = 'absolute';
-                tempTextArea.style.left = '-9999px';
-                document.body.appendChild(tempTextArea);
-                tempTextArea.select();
-                try {
-                  document.execCommand('copy');
-                  handleCopySuccess();
-                } catch (err) {
-                  console.error('Fallback copy failed: ', err);
-                }
-                document.body.removeChild(tempTextArea);
-              }
-            });
-          }
         });
-
-        // Scroll-Triggered Marker Highlighting
-        const highlights = document.querySelectorAll('.highlight');
-        if (highlights.length > 0) {
-          highlights.forEach((el, index) => {
-            el.classList.add(`color-${index % 3}`);
-          });
-
-          const observerOptions = {
-            root: null,
-            threshold: 0.2
-          };
-
-          const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-              }
-            });
-          }, observerOptions);
-
-          highlights.forEach(el => {
-            observer.observe(el);
-          });
-        }
 
         // Container Resizer Logic
         const resizer = container.querySelector('.resizer-handle');
