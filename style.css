@@ -622,5 +622,162 @@ body.dark .comment-form button[type="submit"]:hover {
   background-color: #2b2b2b;
 }
 
+/* ── Blog Hero Image ── */
+.blog-hero-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 28px;
+  display: block;
+}
+
+/* ── Blog Content Images (code screenshots) ── */
+.blog-img {
+  display: block;
+  max-width: 100%;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+body.dark .blog-img {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Blog Tables ── */
+.blog-table-wrapper {
+  overflow-x: auto;
+  margin: 20px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+body.dark .blog-table-wrapper {
+  border-color: #3a3a3a;
+}
+
+.blog-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92em;
+  text-align: center;
+}
+
+.blog-table thead th {
+  background-color: #f0f0f0;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-bottom: 2px solid #ddd;
+  white-space: nowrap;
+}
+
+body.dark .blog-table thead th {
+  background-color: #2a2a2a;
+  border-bottom-color: #444;
+}
+
+.blog-table tbody td {
+  padding: 10px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+body.dark .blog-table tbody td {
+  border-bottom-color: #333;
+}
+
+.blog-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+body.dark .blog-table tbody tr:nth-child(even) {
+  background-color: #232323;
+}
+
+.blog-table tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+body.dark .blog-table tbody tr:nth-child(odd) {
+  background-color: #1a1a1a;
+}
+
+.blog-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.blog-table tbody td.lsb-highlight {
+  font-weight: 700;
+  color: #d35400;
+}
+
+body.dark .blog-table tbody td.lsb-highlight {
+  color: #ffd700;
+}
+
+/* ── Blog Note / Callout ── */
+.blog-note {
+  background-color: #fffde7;
+  border-left: 4px solid #f9a825;
+  padding: 14px 18px;
+  margin: 20px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.93em;
+  line-height: 1.55;
+}
+
+body.dark .blog-note {
+  background-color: #2a2617;
+  border-left-color: #ffd700;
+  color: #e0d8b0;
+}
+
+/* ── Blog Section Heading ── */
+.blog-section-title {
+  font-size: 1.25em;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+/* ── Blog Ordered Steps ── */
+article ol {
+  margin-left: 20px;
+  margin-bottom: 14px;
+}
+
+article ol li {
+  margin-bottom: 6px;
+}
+
+/* ── Blog "What we used" list ── */
+article ul {
+  margin-left: 20px;
+  margin-bottom: 14px;
+}
+
+article ul li {
+  margin-bottom: 4px;
+}
+
+/* ── Blog Summary Box ── */
+.blog-summary {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 24px 0;
+  font-size: 0.95em;
+}
+
+body.dark .blog-summary {
+  background-color: #222;
+  border-color: #3a3a3a;
+}
+
+.blog-summary ul {
+  margin-left: 18px;
+  margin-bottom: 0;
+}
+
 
 
